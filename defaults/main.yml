@@ -9,3 +9,6 @@ mailgun_password: supersecret
 
 # Who should receive root's email?
 #root_forward: user@example.com
+
+mailgun_install: true
+mailgun_setup: true
