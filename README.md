@@ -1,16 +1,13 @@
 ansible-mailgun
 ===============
 
-[![Build Status](https://travis-ci.org/major/ansible-mailgun.svg?branch=master)](https://travis-ci.org/major/ansible-mailgun)
-
 This role configures postfix to use [Mailgun](http://mailgun.com) for outgoing
 email on Linux servers.
 
 Requirements
 ------------
 
-Ansible 1.9 is strongly recommended, but Ansible 1.8 should work (unless
-you're on Fedora, then you need 1.9 for sure for `dnf` support).
+Ansible 2.7+ should work, this fork has currently not been tested on anything other than Ubuntu.
 
 Role Variables
 --------------
