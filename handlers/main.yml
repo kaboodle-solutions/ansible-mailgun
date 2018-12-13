@@ -4,3 +4,4 @@
   service:
     name: postfix
     state: restarted
+  when: mailgun_setup
