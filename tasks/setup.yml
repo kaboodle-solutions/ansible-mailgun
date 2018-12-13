@@ -1,0 +1,21 @@
+---
+
+- name: Set smtp credentials in /etc/postfix/sasl_passwd
+  copy:
+    dest: /etc/postfix/sasl_passwd
+    content: "[{{ mailgun_smtp_host }}]:{{ mailgun_smtp_port }} {{ mailgun_username }}:{{ mailgun_password }}"
+    group: root
+    owner: root
+    mode: 0600
+  register: sasl_config
+
+- name: Run postmap on /etc/postfix/sasl_passwd
+  command: postmap /etc/postfix/sasl_passwd
+  when: sasl_config.changed
+
+- name: Secure /etc/postfix/sasl_passwd
+  file:
+    path: /etc/postfix/sasl_passwd.db
+    group: root
+    owner: root
+    mode: 0600
