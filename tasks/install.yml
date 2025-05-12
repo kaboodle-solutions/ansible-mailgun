@@ -11,13 +11,13 @@
   tags:
     - always
 
-- include: fedora.yml
+- include_tasks: fedora.yml
   when: ansible_distribution == 'Fedora'
 
-- include: redhat.yml
+- include_tasks: redhat.yml
   when:
     - ansible_os_family == 'RedHat'
     - ansible_distribution != 'Fedora'
 
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == 'Debian'
