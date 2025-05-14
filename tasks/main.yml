@@ -1,9 +1,9 @@
 ---
 
-- include: install.yml
+- include_tasks: install.yml
   when: mailgun_install
 
-- include: setup.yml
+- include_tasks: setup.yml
   when: mailgun_setup
 
 - name: Include Mailgun configuration in main.conf
